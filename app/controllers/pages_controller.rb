@@ -11,7 +11,8 @@ class PagesController < ApplicationController
   	@projects = Project.all.limit(100)
   end
 
-  def blog  
+  def blog
+    
   end
 
 end
