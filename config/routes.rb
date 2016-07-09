@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  
+
   #get 'pages/contact'
   get "contact", to: "pages#contact"
 
@@ -8,7 +10,9 @@ Rails.application.routes.draw do
 
   get "blog", to: "pages#blog"
 
-  resources :projects
+  resources :projects do 
+    resources :tasks, except: [:index], controller:  'projects/tasks'
+  end
   
   root 'pages#home'
 
